@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <title>Complete contract - codesy</title>
+
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand">codesy</a>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="hero-unit">
+      <h1>w00t!</h1>
+      <p>Thanks for rocking open-source software! Use the form below to divide
+      your earnings and complete your contract.</p>
+    </div>
+    <div>
+      <div class="tabbable">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#defaultTab" data-toggle="tab">Default</a></li>
+          <li><a id="keepLink" href="#keepTab" data-toggle="tab">Keep</a></li>
+          <li><a href="#giveTab" data-toggle="tab">Give</a></li>
+          <li><a href="#supportTab" data-toggle="tab">Support</a></li>
+          <li><a href="#customTab" data-toggle="tab">Custom</a></li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="defaultTab">
+            <p>This option divides the earnings between yourself, the project, and the codesy Community Fund.</p>
+          </div>
+          <div class="tab-pane" id="keepTab">
+            <p>This option sends all the earnings to you.</p>
+          </div>
+          <div class="tab-pane" id="giveTab">
+            <p>This option gives all the earnings to the project in which the contract occurred.</p>
+          </div>
+          <div class="tab-pane" id="supportTab">
+            <p>This option puts all the earnings into the codesy Community Fund.</p>
+          </div>
+          <div class="tab-pane" id="customTab">
+            <p>Choose how you want to divide the earnings.</p>
+          </div>
+        </div>
+      </div>
+      <form class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="totalAmount">Total</label>
+          <div class="controls">
+            <span class="add-on">$</span>
+            <input class="span2" type="text" id="totalAmount" value="200.00" disabled>
+            <span class="add-on">(100%)</span>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="keepAmount">Keep</label>
+          <div class="controls">
+            <span class="add-on">$</span>
+            <input class="span2" type="text" id="keepAmount" placeholder="170.00">
+            <span class="keep percentage add-on">(85%)</span>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="projectAmount">To Project</label>
+          <div class="controls">
+            <span class="add-on">$</span>
+            <input class="span2" type="text" id="projectAmount" placeholder="20.00">
+            <span class="project percentage add-on">(10%)</span>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="badossAmount">To codesy</label>
+          <div class="controls">
+            <span class="add-on">$</span>
+            <input class="span2" type="text" id="badossAmount" placeholder="10.00">
+            <span class="badoss percentage add-on">(5%)</span>
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+            <button type="submit" class="btn btn-primary">Complete</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <hr/>
+    <footer>
+      <p>Tulsa Web Devs codesy&trade;</p>
+    </footer>
+  </div>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    var options = {
+      'default': [.85, .10, .05],
+      'keep': [1.0, 0.0, 0.0],
+      'project': [0.0, 1.0, 0.0],
+      'badoss': [0.0, 0.0, 1.0]
+    };
+    $('#keepLink').click(function(){
+      $('#keepAmount').val($('#totalAmount').val());
+      $('#projectAmount').val(0);
+      $('#badossAmount').val(0);
+    });
+  </script>
+</body>
+</html>

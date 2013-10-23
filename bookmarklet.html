@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <title>Bid - codesy</title>
+
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand">codesy</a>
+      </div>
+    </div>
+  </div>
+  <header class="jumbotron subhead">
+    <div class="container">
+      <h1>&nbsp;</h1>
+      <h1>localwiki</h1>
+      <h2>django-taggit not quite working with versionutils</h2>
+    </div>
+  </header>
+  <div class="container">
+    <form class="form-horizontal">
+      <fieldset id="Prices">
+        <div class="control-group">
+          <label class="control-label">I will offer:</label>
+          <div class="controls">
+            $<input type="text" placeholder="5.00"> + $5 from <img src="http://opensourcebridge.org/wp-content/uploads/2009/02/mozilla_red_wordmark.png" width="200" style="vertical-align: middle;"/>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">I would need:</label>
+          <div class="controls">
+            $<input type="text" placeholder="100.00">
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+            <button type="submit" class="btn">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    var options = {
+      'default': [.85, .10, .05],
+      'keep': [1.0, 0.0, 0.0],
+      'project': [0.0, 1.0, 0.0],
+      'badoss': [0.0, 0.0, 1.0]
+    };
+    $('#keepLink').click(function(){
+      $('#keepAmount').val($('#totalAmount').val());
+      $('#projectAmount').val(0);
+      $('#badossAmount').val(0);
+    });
+  </script>
+</body>
+</html>
